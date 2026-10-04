@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Ayushi Thakkar - Personal Portfolio Stylesheet
+   Simplified for 5th Semester Web Technology Project
+   ========================================================================== */
+
+/* 1. CSS VARIABLES */
+:root {
+  --primary-color: #0d6efd;
+  --bg-body: #ffffff;
+  --text-dark: #212529;
+}
+
+/* 2. GLOBAL STYLES */
+html {
+  /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+  /* Offset for fixed navbar */
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 3. NAVIGATION BAR */
+#mainNavbar {
+  transition: all 0.3s ease;
+}
+
+#mainNavbar.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* 4. UTILITIES */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+/* Add a very subtle scale effect to buttons */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Basic hover lift for cards (simpler than before) */
+.card {
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
