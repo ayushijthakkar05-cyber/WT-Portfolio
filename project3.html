@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do List App</title>
-  
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,39 +15,45 @@
       font-family: 'Inter', sans-serif;
       background-color: #f4f7f6;
     }
+
     .todo-container {
       background-color: white;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       padding: 30px;
     }
+
     .task-item {
       transition: all 0.2s ease;
       background-color: #f8f9fa;
       border-radius: 8px;
     }
+
     .task-item:hover {
       background-color: #e9ecef;
     }
+
     .completed {
       text-decoration: line-through;
       color: #adb5bd;
     }
   </style>
 </head>
+
 <body class="py-5">
-  
+
   <div class="container">
     <div class="mb-4">
-      <a href="index.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+      <a href="index.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left"></i> Back to
+        Portfolio</a>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
-        
+
         <div class="todo-container">
           <h2 class="text-primary mb-4 text-center fw-bold">My Tasks</h2>
-          
+
           <form id="todoForm" class="d-flex gap-2 mb-4">
             <input type="text" id="taskInput" class="form-control" placeholder="Add a new task..." required>
             <button type="submit" class="btn btn-primary px-4">Add</button>
@@ -80,16 +87,16 @@
     const taskInput = document.getElementById("taskInput");
     const taskList = document.getElementById("taskList");
 
-    todoForm.addEventListener("submit", function(e) {
+    todoForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      
+
       const taskText = taskInput.value.trim();
       if (taskText === "") return;
 
       // Create new list item
       const li = document.createElement("li");
       li.className = "task-item d-flex justify-content-between align-items-center p-3 border";
-      
+
       li.innerHTML = `
         <div>
           <input type="checkbox" class="form-check-input me-2" onchange="toggleTask(this)">
@@ -104,7 +111,7 @@
     });
 
     // Make functions global so inline onclick handlers work
-    window.toggleTask = function(checkbox) {
+    window.toggleTask = function (checkbox) {
       const span = checkbox.nextElementSibling;
       if (checkbox.checked) {
         span.classList.add("completed");
@@ -113,10 +120,11 @@
       }
     };
 
-    window.deleteTask = function(button) {
+    window.deleteTask = function (button) {
       const li = button.closest("li");
       li.remove();
     };
   </script>
 </body>
+
 </html>

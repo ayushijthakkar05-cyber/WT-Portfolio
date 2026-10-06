@@ -1,12 +1,12 @@
 // Wait for the HTML document to fully load
-document.addEventListener("DOMContentLoaded", function() {
-    
+document.addEventListener("DOMContentLoaded", function () {
+
     // ==========================================
     // 1. NAVBAR SCROLL EFFECT
     // ==========================================
     const navbar = document.getElementById("mainNavbar");
-    
-    window.addEventListener("scroll", function() {
+
+    window.addEventListener("scroll", function () {
         if (window.scrollY > 40) {
             navbar.classList.add("scrolled");
         } else {
@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Auto-close mobile menu on click
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     const navbarCollapse = document.getElementById("navbarContent");
-    
-    navLinks.forEach(function(link) {
-        link.addEventListener("click", function() {
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
             if (navbarCollapse.classList.contains("show")) {
                 const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                 bsCollapse.hide();
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // 2. CONTACT FORM VALIDATION
     // ==========================================
     const contactForm = document.getElementById("contactForm");
-    
+
     if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
+        contactForm.addEventListener("submit", function (event) {
             // Prevent page refresh on submit
             event.preventDefault();
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const messageValue = messageInput.value.trim();
 
             let isValid = true;
-            
+
             // Get error text containers
             const nameError = document.getElementById("nameError");
             const emailError = document.getElementById("emailError");
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Reset form
                 contactForm.reset();
-                
+
                 // Clear validation classes
                 nameInput.classList.remove("is-valid", "is-invalid");
                 emailInput.classList.remove("is-valid", "is-invalid");
